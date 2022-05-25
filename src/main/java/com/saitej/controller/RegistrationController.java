@@ -15,7 +15,7 @@ public class RegistrationController {
     }
 
     @RequestMapping("/registration-success")
-    public String registrationSuccessPage(@ModelAttribute UserRegistrationDto userRegistrationDto){
+    public String registrationSuccessPage(@ModelAttribute("userRegDto") UserRegistrationDto userRegistrationDto){
         return "user-registration-success";
     }
 }
