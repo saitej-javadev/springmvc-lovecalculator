@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springmvc-lovecalculator:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>springmvc-lovecalculator</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="springmvc-lovecalculator.war">
+      <element id="artifact" artifact-name="springmvc-lovecalculator:war exploded" />
+    </root>
+  </artifact>
+</component>
