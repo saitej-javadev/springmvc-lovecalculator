@@ -15,6 +15,7 @@
     label{
         color: navy;
     }
+
 </style>
 </head>
 
@@ -24,7 +25,8 @@
         <span class="navbar-brand mb-0 h1">Registration Form</span>
     </nav>
 </header>
-<div class="container m-auto">
+
+<div style="width: 60%" class="container ">
     <form:form action="registration-success" class="form-horizontal" role="form" modelAttribute="userRegDto">
 
 

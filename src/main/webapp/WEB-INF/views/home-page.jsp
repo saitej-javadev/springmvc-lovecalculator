@@ -1,5 +1,5 @@
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!doctype html>
 <html lang="en">
@@ -40,7 +40,7 @@
                         Dropdown
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="${pageContext.request.contextPath}/register">User Registration Page</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
@@ -59,7 +59,7 @@
 </header>
 
 <hr>
-<div class="container mt-5">
+<div style="width: 40%" class="container mt-5">
 
     <form:form action="process-homepage" method="get" modelAttribute="userInfoDto">
         <div class="form-group">
