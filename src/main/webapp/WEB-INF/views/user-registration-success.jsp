@@ -3,6 +3,7 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <style>
     body {
@@ -45,14 +46,18 @@
     </div>
     <h1>Success</h1>
     <p>Registration Sucess;<br/> Check the below details!</p>
-    <ul>
-        <li>Name: ${userRegDto.name}</li>
-        <li>User Name: ${userRegDto.userName}</li>
-        <li>Password: ${userRegDto.password}</li>
-        <li>Country: ${userRegDto.countryName}</li>
-        <li>Gender: ${userRegDto.gender}</li>
-        <li>Hobbies: ${userRegDto.hobbies}</li>
-    </ul>
+<pre></pre>
+             Name :            ${userRegDto.name}
+         User Name:            ${userRegDto.userName}
+          Password:            ${userRegDto.password}
+           Country:            ${userRegDto.countryName}
+            Gender:            ${userRegDto.gender}
+           Hobbies:            ${userRegDto.hobbies}
+             Email:            ${userRegDto.communicatonDto.email}
+      MobileNumber:            ${userRegDto.communicatonDto.phoneDto}
+    </pre>
+     <a href="${pageContext.request.contextPath}/register" class="btn btn-success">HOME</a>
 </div>
+
 </body>
 </html>

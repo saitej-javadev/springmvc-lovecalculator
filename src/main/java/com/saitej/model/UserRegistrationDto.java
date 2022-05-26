@@ -1,16 +1,20 @@
 package com.saitej.model;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Arrays;
 import java.util.List;
 
 public class UserRegistrationDto {
 
+    @NotBlank(message = "* name cannot be blank")
     private String name;
+    @NotBlank(message = "* username cannot be blank")
     private String userName;
     private char[] password;
     private String countryName;
     private List<String> hobbies;
     private String gender;
+    private CommunicatonDto communicatonDto;
 
 
 
@@ -61,6 +65,14 @@ public class UserRegistrationDto {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public CommunicatonDto getCommunicatonDto() {
+        return communicatonDto;
+    }
+
+    public void setCommunicatonDto(CommunicatonDto communicatonDto) {
+        this.communicatonDto = communicatonDto;
     }
 
     @Override
