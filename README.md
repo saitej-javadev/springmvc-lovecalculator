@@ -4,14 +4,14 @@
 # For Bean Validation
 
 **1.Add validation api and hibernate validator in pom.xml**
-`	<dependency>
+	`<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>2.0.1.Final</version>
-		</dependency>
+		</dependency>`
 		
 		
-		<dependency>
+		`<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.1.0.Final</version>
