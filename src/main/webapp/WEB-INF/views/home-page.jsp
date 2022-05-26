@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>DEIFY CALCULATOR</title>
+    <title>Love Calculator</title>
    <style>
        h2{
            color:crimson;
@@ -61,18 +61,44 @@
 <hr>
 <div style="width: 40%" class="container mt-5">
 
-    <form:form action="process-homepage" method="get" modelAttribute="userInfoDto">
+<%--
+    <form:form action="process-homepage" method="get" modelAttribute="userInfoDto" onsubmit="return validateUserName()" >
+--%>
+    <form:form action="process-homepage" method="get" modelAttribute="userInfoDto" >
         <div class="form-group">
             <label for="yourName">Your Name</label>
             <form:input  class="form-control" id="yourName" aria-describedby="yourName" placeholder="Romeo" path="yourName"/>
+            <form:errors path="yourName" cssStyle="color: red"/>
         </div>
         <div class="form-group">
             <label for="crushName">Your Beau Name</label>
             <form:input  class="form-control" id="crushName" aria-describedby="crushName" placeholder="Juliet" path="crushName"/>
         </div>
+
+        <div class="form-group">
+
+            <form:checkbox  id="termAndCondition" aria-describedby="termAndCondition"  path="termAndCondition"/>
+            <label for="termAndCondition">Am agreeing for the terms and conditions</label>
+            <form:errors path="termAndCondition" cssStyle="color: red"/>
+        </div>
+
         <button type="submit" class="btn btn-danger">Calculate</button>
     </form:form>
 </div>
+
+<script>
+   function validateUserName(){
+       var yourName=document.getElementById("yourName").value;
+       var crushName=document.getElementById("crushName").value;
+       if(yourName.length<3 || crushName.length<3 ){
+           alert("Name cannot be Blank!!!");
+           return  false;
+       }
+       else {
+           return true
+       }
+   }
+</script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -80,3 +106,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+<%--
+https://stackoverflow.com/questions/30374651/form-error-messages-are-not-displaying-in-jsp-in-spring-mvc--%>

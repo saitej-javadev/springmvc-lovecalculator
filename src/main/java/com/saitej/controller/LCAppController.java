@@ -3,13 +3,13 @@ package com.saitej.controller;
 
 import com.saitej.model.UserInfoDto;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.jws.WebParam;
+import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class LCAppController {
@@ -41,12 +41,18 @@ public class LCAppController {
     }*/
 
     @RequestMapping("/process-homepage")
-    public ModelAndView processHomePage(@ModelAttribute UserInfoDto userInfoDto){
+    public String processHomePage( @ModelAttribute @Valid UserInfoDto userInfoDto, BindingResult result){
 
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("result-page");
+        if(result.hasErrors()){
 
-        return mav;
+            List<ObjectError> allErrors = result.getAllErrors();
+            allErrors.stream().forEach(System.out::println);
+
+            return "home-page";
+        }
+
+
+        return "result-page";
 
     }
 }
